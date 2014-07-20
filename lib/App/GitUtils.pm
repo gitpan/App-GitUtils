@@ -1,7 +1,7 @@
 package App::GitUtils;
 
-our $DATE = '2014-07-13'; # DATE
-our $VERSION = '0.01'; # VERSION
+our $DATE = '2014-07-18'; # DATE
+our $VERSION = '0.02'; # VERSION
 
 use 5.010001;
 use strict;
@@ -146,7 +146,7 @@ App::GitUtils - Day-to-day command-line utilities for git
 
 =head1 VERSION
 
-This document describes version 0.01 of App::GitUtils (from Perl distribution App-GitUtils), released on 2014-07-13.
+This document describes version 0.02 of App::GitUtils (from Perl distribution App-GitUtils), released on 2014-07-18.
 
 =head1 SYNOPSIS
 
@@ -179,6 +179,8 @@ First element (status) is an integer containing HTTP status code
 element (meta) is called result metadata and is optional, a hash
 that contains extra information.
 
+ (any)
+
 
 =head2 list_hooks() -> [status, msg, result, meta]
 
@@ -196,6 +198,8 @@ First element (status) is an integer containing HTTP status code
 200. Third element (result) is optional, the actual result. Fourth
 element (meta) is called result metadata and is optional, a hash
 that contains extra information.
+
+ (any)
 
 
 =head2 post_commit() -> [status, msg, result, meta]
@@ -220,6 +224,8 @@ First element (status) is an integer containing HTTP status code
 200. Third element (result) is optional, the actual result. Fourth
 element (meta) is called result metadata and is optional, a hash
 that contains extra information.
+
+ (any)
 
 
 =head2 run_hook(%args) -> [status, msg, result, meta]
@@ -252,6 +258,8 @@ First element (status) is an integer containing HTTP status code
 200. Third element (result) is optional, the actual result. Fourth
 element (meta) is called result metadata and is optional, a hash
 that contains extra information.
+
+ (any)
 
 =head1 SEE ALSO
 

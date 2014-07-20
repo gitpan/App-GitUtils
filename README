@@ -2,8 +2,8 @@ NAME
     App::GitUtils - Day-to-day command-line utilities for git
 
 VERSION
-    This document describes version 0.01 of App::GitUtils (from Perl
-    distribution App-GitUtils), released on 2014-07-13.
+    This document describes version 0.02 of App::GitUtils (from Perl
+    distribution App-GitUtils), released on 2014-07-18.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
@@ -32,6 +32,8 @@ FUNCTIONS
     is called result metadata and is optional, a hash that contains extra
     information.
 
+     (any)
+
   list_hooks() -> [status, msg, result, meta]
     List available hooks for the repository.
 
@@ -47,6 +49,8 @@ FUNCTIONS
     element (result) is optional, the actual result. Fourth element (meta)
     is called result metadata and is optional, a hash that contains extra
     information.
+
+     (any)
 
   post_commit() -> [status, msg, result, meta]
     Run post-commit hook.
@@ -69,6 +73,8 @@ FUNCTIONS
     element (result) is optional, the actual result. Fourth element (meta)
     is called result metadata and is optional, a hash that contains extra
     information.
+
+     (any)
 
   run_hook(%args) -> [status, msg, result, meta]
     Run a hook.
@@ -95,6 +101,8 @@ FUNCTIONS
     element (result) is optional, the actual result. Fourth element (meta)
     is called result metadata and is optional, a hash that contains extra
     information.
+
+     (any)
 
 SEE ALSO
 HOMEPAGE
