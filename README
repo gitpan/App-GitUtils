@@ -2,8 +2,8 @@ NAME
     App::GitUtils - Day-to-day command-line utilities for git
 
 VERSION
-    This document describes version 0.02 of App::GitUtils (from Perl
-    distribution App-GitUtils), released on 2014-07-18.
+    This document describes version 0.03 of App::GitUtils (from Perl
+    distribution App-GitUtils), released on 2014-08-16.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
@@ -57,7 +57,7 @@ FUNCTIONS
 
     Basically the same as:
 
-        % .git/hooks/post-commit
+     % .git/hooks/post-commit
 
     except can be done anywhere inside git repo.
 
@@ -81,7 +81,7 @@ FUNCTIONS
 
     Basically the same as:
 
-        % .git/hooks/<hook-name>
+     % .git/hooks/<hook-name>
 
     except can be done anywhere inside git repo and provides tab completion.
 

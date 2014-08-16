@@ -1,7 +1,7 @@
 package App::GitUtils;
 
-our $DATE = '2014-07-18'; # DATE
-our $VERSION = '0.02'; # VERSION
+our $DATE = '2014-08-16'; # DATE
+our $VERSION = '0.03'; # VERSION
 
 use 5.010001;
 use strict;
@@ -146,7 +146,7 @@ App::GitUtils - Day-to-day command-line utilities for git
 
 =head1 VERSION
 
-This document describes version 0.02 of App::GitUtils (from Perl distribution App-GitUtils), released on 2014-07-18.
+This document describes version 0.03 of App::GitUtils (from Perl distribution App-GitUtils), released on 2014-08-16.
 
 =head1 SYNOPSIS
 
@@ -208,7 +208,7 @@ Run post-commit hook.
 
 Basically the same as:
 
-    % .git/hooks/post-commit
+ % .git/hooks/post-commit
 
 except can be done anywhere inside git repo.
 
@@ -234,7 +234,7 @@ Run a hook.
 
 Basically the same as:
 
-    % .git/hooks/<hook-name>
+ % .git/hooks/<hook-name>
 
 except can be done anywhere inside git repo and provides tab completion.
 
