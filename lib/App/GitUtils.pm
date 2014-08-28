@@ -1,7 +1,7 @@
 package App::GitUtils;
 
-our $DATE = '2014-08-16'; # DATE
-our $VERSION = '0.03'; # VERSION
+our $DATE = '2014-08-28'; # DATE
+our $VERSION = '0.04'; # VERSION
 
 use 5.010001;
 use strict;
@@ -131,6 +131,23 @@ sub post_commit {
     run_hook(name => 'post-commit');
 }
 
+$SPEC{pre_commit} = {
+    v => 1.1,
+    summary => 'Run pre-commit hook',
+    description => <<'_',
+
+Basically the same as:
+
+    % .git/hooks/pre-commit
+
+except can be done anywhere inside git repo.
+
+_
+};
+sub pre_commit {
+    run_hook(name => 'pre-commit');
+}
+
 1;
 # ABSTRACT: Day-to-day command-line utilities for git
 
@@ -146,7 +163,7 @@ App::GitUtils - Day-to-day command-line utilities for git
 
 =head1 VERSION
 
-This document describes version 0.03 of App::GitUtils (from Perl distribution App-GitUtils), released on 2014-08-16.
+This document describes version 0.04 of App::GitUtils (from Perl distribution App-GitUtils), released on 2014-08-28.
 
 =head1 SYNOPSIS
 
@@ -228,13 +245,39 @@ that contains extra information.
  (any)
 
 
+=head2 pre_commit() -> [status, msg, result, meta]
+
+Run pre-commit hook.
+
+Basically the same as:
+
+ % .git/hooks/pre-commit
+
+except can be done anywhere inside git repo.
+
+No arguments.
+
+Return value:
+
+Returns an enveloped result (an array).
+
+First element (status) is an integer containing HTTP status code
+(200 means OK, 4xx caller error, 5xx function error). Second element
+(msg) is a string containing error message, or 'OK' if status is
+200. Third element (result) is optional, the actual result. Fourth
+element (meta) is called result metadata and is optional, a hash
+that contains extra information.
+
+ (any)
+
+
 =head2 run_hook(%args) -> [status, msg, result, meta]
 
 Run a hook.
 
 Basically the same as:
 
- % .git/hooks/<hook-name>
+ % .git/hooks/E<lt>hook-nameE<gt>
 
 except can be done anywhere inside git repo and provides tab completion.
 
@@ -269,7 +312,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/App-GitUti
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-App-GitUtils>.
+Source repository is at L<https://github.com/perlancar/perl-App-GitUtils>.
 
 =head1 BUGS
 
@@ -281,11 +324,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

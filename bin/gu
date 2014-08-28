@@ -1,7 +1,7 @@
 #!perl
 
-our $DATE = '2014-08-16'; # DATE
-our $VERSION = '0.03'; # VERSION
+our $DATE = '2014-08-28'; # DATE
+our $VERSION = '0.04'; # VERSION
 
 use 5.010;
 use strict;
@@ -19,6 +19,7 @@ Perinci::CmdLine::Any->new(
         'rh'          => {url => "${p}run_hook",
                           summary => 'Alias for run-hook'},
         'post-commit' => {url => "${p}post_commit"},
+        'pre-commit'  => {url => "${p}pre_commit"},
     },
     default_subcommand => 'info',
     get_subcommand_from_arg => 2,
@@ -39,7 +40,7 @@ gu - Day-to-day command-line utilities for git
 
 =head1 VERSION
 
-This document describes version 0.03 of gu (from Perl distribution App-GitUtils), released on 2014-08-16.
+This document describes version 0.04 of gu (from Perl distribution App-GitUtils), released on 2014-08-28.
 
 =head1 SYNOPSIS
 
@@ -88,6 +89,14 @@ is shortcut for:
 
  % gu run-hook post-commit
 
+=head2 pre-commit
+
+ % gu pre-commit
+
+is shortcut for:
+
+ % gu run-hook pre-commit
+
 =head2 info
 
 =head1 HOMEPAGE
@@ -96,7 +105,7 @@ Please visit the project's homepage at L<https://metacpan.org/release/App-GitUti
 
 =head1 SOURCE
 
-Source repository is at L<https://github.com/sharyanto/perl-App-GitUtils>.
+Source repository is at L<https://github.com/perlancar/perl-App-GitUtils>.
 
 =head1 BUGS
 
@@ -108,11 +117,11 @@ feature.
 
 =head1 AUTHOR
 
-Steven Haryanto <stevenharyanto@gmail.com>
+perlancar <perlancar@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Steven Haryanto.
+This software is copyright (c) 2014 by perlancar@cpan.org.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

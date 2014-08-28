@@ -2,8 +2,8 @@ NAME
     App::GitUtils - Day-to-day command-line utilities for git
 
 VERSION
-    This document describes version 0.03 of App::GitUtils (from Perl
-    distribution App-GitUtils), released on 2014-08-16.
+    This document describes version 0.04 of App::GitUtils (from Perl
+    distribution App-GitUtils), released on 2014-08-28.
 
 SYNOPSIS
     This distribution provides the following command-line utilities:
@@ -76,12 +76,36 @@ FUNCTIONS
 
      (any)
 
+  pre_commit() -> [status, msg, result, meta]
+    Run pre-commit hook.
+
+    Basically the same as:
+
+     % .git/hooks/pre-commit
+
+    except can be done anywhere inside git repo.
+
+    No arguments.
+
+    Return value:
+
+    Returns an enveloped result (an array).
+
+    First element (status) is an integer containing HTTP status code (200
+    means OK, 4xx caller error, 5xx function error). Second element (msg) is
+    a string containing error message, or 'OK' if status is 200. Third
+    element (result) is optional, the actual result. Fourth element (meta)
+    is called result metadata and is optional, a hash that contains extra
+    information.
+
+     (any)
+
   run_hook(%args) -> [status, msg, result, meta]
     Run a hook.
 
     Basically the same as:
 
-     % .git/hooks/<hook-name>
+     % .git/hooks/E<lt>hook-nameE<gt>
 
     except can be done anywhere inside git repo and provides tab completion.
 
@@ -111,7 +135,7 @@ HOMEPAGE
 
 SOURCE
     Source repository is at
-    <https://github.com/sharyanto/perl-App-GitUtils>.
+    <https://github.com/perlancar/perl-App-GitUtils>.
 
 BUGS
     Please report any bugs or feature requests on the bugtracker website
@@ -121,10 +145,10 @@ BUGS
     to an existing test-file that illustrates the bug or desired feature.
 
 AUTHOR
-    Steven Haryanto <stevenharyanto@gmail.com>
+    perlancar <perlancar@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Steven Haryanto.
+    This software is copyright (c) 2014 by perlancar@cpan.org.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
